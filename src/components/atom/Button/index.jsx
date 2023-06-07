@@ -5,9 +5,11 @@ const Button = ({text}) => {
     return (
         <div>
             <button
-                className="bg-blue-300 px-5 py-2 rounded-md hover:bg-blue-500"
+                className={
+                    `${text !== "Explore" ? "mt-0" : "mt-5"} bg-blue-400 px-6 sm:px-5 pb-1 sm:py-2 rounded-md hover:bg-blue-500`
+                }
             >
-                <span className='text-white font-bold'>
+                <span className='text-white font-bold text-[10px] sm:text-base'>
                     {text}
                 </span>
             </button>
