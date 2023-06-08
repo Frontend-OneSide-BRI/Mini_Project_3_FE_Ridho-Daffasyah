@@ -1,12 +1,12 @@
 //FormLogin Components
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //Import Components
 import { Button } from 'src/components/atom';
 
 const FormLogin = ({ reqToken }) => {
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [userData, setUserData] = useState({
         username: '',
@@ -22,7 +22,7 @@ const FormLogin = ({ reqToken }) => {
     };
 
     return (
-        <form action="post" className='w-[30%] bg-black rounded-xl opacity-[0.8] p-10 absolute z-[1] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <form onSubmit={() => navigate("/movies")} className='w-[30%] bg-black rounded-xl opacity-[0.8] p-10 absolute z-[1] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             <h1 className='text-4xl font-bold text-white !text-left'>Login</h1>
             <div className='w-full flex flex-col items-center'>
                 <div className='w-full flex flex-col items-start mt-10'>
